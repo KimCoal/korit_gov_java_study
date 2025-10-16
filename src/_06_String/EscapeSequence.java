@@ -2,6 +2,7 @@ package _06_String;
 
 public class EscapeSequence {
     public static void main(String[] args) {
+        System.out.println("===============================");
         // 특수문자, 이스케이프 문자
         // \n. \t, \\, \", \'
 
@@ -35,5 +36,6 @@ public class EscapeSequence {
         // Quiz
         String id = "990226-1234567";
         System.out.println(id.substring(0,8));
+        System.out.println(id.substring(0, id.indexOf("-") + 2));
     }
 }
