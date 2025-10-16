@@ -75,16 +75,43 @@ public class Operator {
         System.out.println("===============================");
 
         // 논리 연산자 조합 (&&, ||)
-        // && 선 조건이 true 일때만 후조건을 실행하며 선조건이 false이면 후조건을 실행하지 않는다
+        // && 선조건이 true 일때만 후조건을 실행하며 선조건이 false이면 후조건을 실행하지 않는다
+        // || 선조건이 true 이면 후조건을 실행하지 않으며 선조건이 false이면 후조건을 싱행한다
 
+        int a = 10;
+        int b = 20;
+        System.out.println(b > a && a > 5); // 선조건이 true이므로 후조건의 결과값을 출력
+        System.out.println(b < a || b > 10); // 선조건이 false이므로 후조건의 결과값을 출력
+        System.out.println("===============================");
 
+        // 삼항 연산자
+        int x = 5;
+        int y = 3;
+        // (조건) ? 참일떄 결과값 : 거짓일때 결과값
+        int max = (x > y) ? x : y;
+        System.out.println(max);
+        int min = (x < y) ? x : y;
+        System.out.println(min);
 
+        String maxx = (x > y) ? "x값이 더 큽니다" : "y값이 더 큽니다";
+        System.out.println(maxx);
 
+        y = 5 ;
+        boolean isSame = (x == y) ? true : false;
+        System.out.println(isSame);
 
+        String same = (x != y) ? "다름" : "같음";
+        System.out.println(same);
 
+        /*
+        * height라는 int 변수를 선언
+        * 키가 120이상인 경우 탑승가능하도록 하는 삼항연산자
+        * 가능하면 "탑승 가능"을 출력하고 불가능하면 "탑승 불가능"을 출력
+        * */
 
-
-
+        int height = 130;
+        String canRide = (height >= 120) ? "탑승 가능" : "탑승 불가능";
+        System.out.println(canRide);
 
 
 
