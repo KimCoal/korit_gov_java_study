@@ -102,6 +102,7 @@ public class Operator {
 
         String same = (x != y) ? "다름" : "같음";
         System.out.println(same);
+        System.out.println("===============================");
 
         /*
         * height라는 int 변수를 선언
