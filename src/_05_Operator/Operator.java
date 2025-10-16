@@ -113,6 +113,26 @@ public class Operator {
         int height = 130;
         String canRide = (height >= 120) ? "탑승 가능" : "탑승 불가능";
         System.out.println(canRide);
+        System.out.println("===============================");
+
+        // 홀짝 맞추기
+        int number = 11;
+        String solve = (number % 2 == 0) ? "짝수" : "홀수";
+        System.out.println(solve);
+        System.out.println("===============================");
+
+        // 점수가 0 ~ 100점까지 주어질떄
+        // 90이상 A
+        // 80이상 B
+        // 70이상 C
+        // 나머지 D
+
+        int score = 87;
+        String grade = (score >= 90) ? "A" :
+                       (score >= 80) ? "B" :
+                       (score >= 70) ? "C" : "D";
+        System.out.println(grade);
+        // 해당 코드 처럼 중첩 가능하지만 가독성이 떨어지기 때문에 해당 코드는 조건문을 통해 작성하는것이 좋다
 
 
 
