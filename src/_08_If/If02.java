@@ -41,7 +41,7 @@ public class If02 {
         System.out.print("x 값을 입력하세요 : ");
         int x = scanner.nextInt();
 //        scanner.nextLine();
-//        nextInt 다음에 nextLine을 쓸대 \n을 버리는것 nextLine은 엔터를 읽지만
+//        nextInt 다음에 nextLine을 쓸때 \n을 버리는것 nextLine은 엔터를 읽지만
 //        nextInt는 엔터 스페이스 등을 무시하고 정수만 읽는다
         System.out.print("y 값을 입력하세요 : ");
         int y = scanner.nextInt();
