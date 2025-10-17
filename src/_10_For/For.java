@@ -169,47 +169,47 @@ public class For {
         // 숫자를 입력받아 팩토리얼 구하기
         // 단 1~10까지만 입력받기
 
-//        System.out.print("팩토리얼을 구할 숫자 입력 : ");
-//        int fac = scanner.nextInt();
-//
-//        if (fac < 1 || fac > 10){
-//            System.out.println("범위를 벗어났습니다");
-//            return;
-//        }
-//
-//        int result = 1;
-//        String str = "";
-//        for (int i = 1; i <= fac; i++) {
-//            result *= i;
-//            str += i;
-//            if (i < fac) str += "*";
-//        }
-//        System.out.println(str);
-//        System.out.println(result);
+        System.out.print("팩토리얼을 구할 숫자 입력 : ");
+        int fac = scanner.nextInt();
+
+        if (fac < 1 || fac > 10){
+            System.out.println("범위를 벗어났습니다");
+            return;
+        }
+
+        int result = 1;
+        String str = "";
+        for (int i = 1; i <= fac; i++) {
+            result *= i;
+            str += i;
+            if (i < fac) str += "*";
+        }
+        System.out.println(str);
+        System.out.println(result);
 
         // 1~50까지 반복하는데
         // 3 6 9 일때는 박수
         // 5일때는 으악
 
-//        for (int i = 1; i <= 50; i++){
-//            if (i % 10 == 3){
-//                System.out.print("박수 ");
-//                continue;
-//            }
-//            if (i % 10 == 6){
-//                System.out.print("박수 ");
-//                continue;
-//            }
-//            if (i % 10 == 9){
-//                System.out.print("박수 ");
-//                continue;
-//            }
-//            if (i % 10 == 5){
-//                System.out.print("으악 ");
-//                continue;
-//            }
-//            System.out.print(i + " ");
-//        }
+        for (int i = 1; i <= 50; i++){
+            if (i % 10 == 3){
+                System.out.print("박수 ");
+                continue;
+            }
+            if (i % 10 == 6){
+                System.out.print("박수 ");
+                continue;
+            }
+            if (i % 10 == 9){
+                System.out.print("박수 ");
+                continue;
+            }
+            if (i % 10 == 5){
+                System.out.print("으악 ");
+                continue;
+            }
+            System.out.print(i + " ");
+        }
 
         // 문제오류 30 부터 39는 항상 박수에 33 36 39는 박수 2번 50은 으악 2번
         // 해결
