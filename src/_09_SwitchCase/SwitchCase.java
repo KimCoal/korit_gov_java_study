@@ -64,6 +64,7 @@ public class SwitchCase {
             case 1 : price += 1000;
             case 2 : price += 1000;
             case 3 : price += 1000;
+            break;
         }
         System.out.println("price = " + price);
 
@@ -74,36 +75,86 @@ public class SwitchCase {
         // 12,1,2 > Winter 출력
 
         Scanner scanner = new Scanner(System.in);
+//
+//        int month;
+//
+//        System.out.print("달을 입력해주세요 :");
+//
+//        month = scanner.nextInt();
+//
+//        switch (month) {
+//            case 3 :
+//            case 4 :
+//            case 5 :
+//                System.out.println("Spring");
+//                break;
+//            case 6 :
+//            case 7 :
+//            case 8 :
+//                System.out.println("Summer");
+//                break;
+//            case 9 :
+//            case 10 :
+//            case 11 :
+//                System.out.println("Autumn");
+//                break;
+//            case 12 :
+//            case 1 :
+//            case 2 :
+//                System.out.println("Winter");
+//                break;
+//            default:
+//                System.out.println("1부터 12까지의 수만 입력할 수 있습니다");
+//                break;
+//        }
+        // 숫자 a를 입력받고
+        // 연산자 기호를 입력받고 (+, -, *, /) !> 유효한 기호가 아닙니다
+        // 숫자 b를 입력받는다
 
-        int month;
+        int a;
+        String cal;
+        int b;
 
-        System.out.print("달을 입력해주세요 :");
+        System.out.print("숫자 a를 입력하세요 : ");
+        a = scanner.nextInt();
+        scanner.nextLine();
 
-        month = scanner.nextInt();
+        System.out.print("연산자 기호를 입력하세요 : ");
+        cal = scanner.nextLine();
 
-        switch (month) {
-            case 3 :
-            case 4 :
-            case 5 :
-                System.out.println("Spring");
+        System.out.print("숫자 b를 입력하세요 : ");
+        b = scanner.nextInt();
+
+        int result = 0;
+        boolean valid = true;
+
+        switch (cal) {
+            case "+":
+                result = a + b;
                 break;
-            case 6 :
-            case 7 :
-            case 8 :
-                System.out.println("Summer");
+            case "-":
+                result = a - b;
                 break;
-            case 9 :
-            case 10 :
-            case 11 :
-                System.out.println("Autumn");
+            case "*":
+                result = a * b;
                 break;
-            case 12 :
-            case 1 :
-            case 2 :
-                System.out.println("Winter");
+            case "/":
+                if (b != 0){
+                    result = a / b;
+                } else {
+                    System.out.println("0으로 나눌수 없습니다");
+                    valid = false;
+                }
                 break;
             default:
-                System.out.println("1부터 12까지의 수만 입력할 수 있습니다");
+                System.out.println("유효한 연산자가 아닙니다");
+                break;
         }
+        if (valid) {
+            System.out.println("결과는 " + result + " 입니다.");
+        }
+
+
+
     }
 }
