@@ -72,7 +72,6 @@ public class TypeCasting {
         int convertedFloatNumber = (int) floatNumber;
         System.out.println("convertedFloatNumber = " + convertedFloatNumber);
 
-
-
+        
     }
 }
