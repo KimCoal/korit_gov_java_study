@@ -79,13 +79,13 @@ public class While {
 //
 //        }
         // 1부터 100까지 누적합
-        int sum = 0;
-        int num1 = 1;
-        while (num1 <= 100) {
-            sum += num1;
-            num1++;
-        }
-        System.out.println(sum);
+//        int sum = 0;
+//        int num1 = 1;
+//        while (num1 <= 100) {
+//            sum += num1;
+//            num1++;
+//        }
+//        System.out.println(sum);
 
         // 1번부터 100번까지 식당 웨이팅
         // 이때 1번부터 차례대로 입장 > **번 손님 입장 ! 출력
@@ -93,14 +93,41 @@ public class While {
         // 솔드아웃 되었기 때문에 가게 문닫음
         // 마지막엔 영업종료 출력
 
+        int customer = 1;
+        int waiting = 100;
+        int soldOut = 10;
 
+        while (customer <= waiting){
+            System.out.println(customer + "번 손님 입장 !");
+            if (customer == soldOut) {
+                System.out.println("한정메뉴 솔드아웃 !");
+                break;
+            }
+            customer++;
+        }
+        System.out.println("영업 종료");
 
         // 1번부터 50번까지 웨이팅
         // 메뉴가 20개까지만 한정판매 > 솔드아웃 가게 샷다 내림 출력
         // 이때 14번이 노쇼 > *번 노쇼 발생 ! 출력
         // while문으로
 
+        int newCustomer = 1;
+        int newWaiting = 50;
+        int max = 20;
+        int noShow = 14;
 
-
+        while (newCustomer <= newWaiting) {
+            if (newCustomer == noShow) {
+                System.out.println(noShow + "번 노쇼 발생 !!");
+            } else
+            System.out.println(newCustomer + "번 손님 입장 !");
+            if (newCustomer == max) {
+                System.out.println("솔드아웃 가게 샷다 내려");
+                break;
+            }
+            newCustomer++;
+        }
+        System.out.println("영업 종료");
     }
 }
