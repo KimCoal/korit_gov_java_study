@@ -19,5 +19,17 @@ public class Array02 {
         for (String country : countries) {
             System.out.println(country);
         }
+
+        // 본인이 좋아하는 음식 5가지 배열에 저장하고
+        // 향상된 for문을 이용해서 출력해보기
+        // "내가 좋아하는 음식 1번 ***" ~
+
+        String[] favFoods = {"IceCream", "Fork", "Rice", "ZeroCock"};
+        int i = 0;
+
+        for (String myFav : favFoods){
+            i++;
+            System.out.println("내가 좋아하는 음식 " + i + "번 " + myFav);
+        }
     }
 }
