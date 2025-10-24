@@ -25,5 +25,21 @@ public class Main {
 
         Tiger tiger1 = new Tiger("호랭이", 6, true);
         tiger1.move();
+        tiger1.hunt();
+
+        Human human1 = new Human();
+        human1.setAnimalAge(25);
+        human1.setAnimalName("coal");
+        human1.setLanguage("한국어");
+
+        System.out.println(human1.getAnimalName());
+        human1.getAnimalAge();
+        human1.getLanguage();
+
+        human1.move();
+        human1.read("정보처리기능사 실기책");
+
+
+
     }
 }

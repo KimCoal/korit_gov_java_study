@@ -6,6 +6,8 @@ package _17_Inheritance;
 * 1. super() : 부모클래스의 생성자를 호출하는 키워드
 *               만약 NoArgs > super()
 *               만약 AllArgs > super(필드 속성값들...)
+* 2. super.메소드명() : 부모클래스의 메소드를 호출하는 것
+* 3. super.필드명 : 부모클래스의 필드 속성값을 불러온 것
 * */
 
 public class Tiger extends Animal {
@@ -37,9 +39,28 @@ public class Tiger extends Animal {
     // 사용하는 이유 > 자식 클래스에 맞게 다르게 동작시켜야 할 때
     // 부모 클래스의 접근제어범위가 더 좁아야한다
 
+    /*
+    * 어노테이션 (시그니처)
+    * 코드에 붙이는 꼬리표
+    * 이 친구는 이런 용도로 사용되니까 좀 특별하게 유심히 잘 봐줘
+    * 코드를 읽고 컴퓨터가 이해하도록 어노테이션을 달아주면 컴퓨터가
+    * 어노테이션을 보고 인식함
+    * */
+
     @Override
     public void move() {
+        super.move();
+        // 부모클래스인 Animal 클래스의 move()매소드를 호출
         System.out.println("호랑이가 움직인다.");
+    }
+
+    public void hunt () {
+        System.out.println(getAnimalName() + "가 사냥을 합니다.");
+        /*
+        * 상속을 했을때 메소드를 호출 시 탐색에는 순서가 있다
+        * 자식 클래스에서 해당 메소드가 없다면 부모클래스에서 찾는다
+        * 따라서 super.getAnimalName()으로 명시 안해줘도 된다
+        * */
     }
 
 }

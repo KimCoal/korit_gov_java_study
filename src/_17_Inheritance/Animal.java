@@ -8,6 +8,10 @@ public class Animal {
     // 메소드에 move 만들기
     // 움직입니다. 출력
 
+    Animal() {
+
+    }
+
     public Animal(String animalName,int animalAge) {
         this.animalName = animalName;
         this.animalAge = animalAge;
