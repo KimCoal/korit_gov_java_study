@@ -10,6 +10,6 @@ public class PhoneFactory extends Factory {
 
     @Override
     public void manage() {
-        System.out.println("스마트폰 공장을 관리합니다.");
+        System.out.println(getFactoryName() + "공장을 관리합니다.");
     }
 }

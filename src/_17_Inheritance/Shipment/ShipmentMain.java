@@ -6,7 +6,7 @@ public class ShipmentMain {
 
         bikeShipment.route();
         bikeShipment.calcFee(20, 30);
-        bikeShipment.calcFee(0,0);
+        bikeShipment.calcFee(-10,-30);
 
     }
 }

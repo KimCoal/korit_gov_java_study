@@ -1,0 +1,67 @@
+package _19_Interface.SmartDevice;
+
+/*
+ * interface
+ * getName, turnOn, turnOff, isTurnedOn
+ *
+ * SmartAirConditioner클래스를 만들고 SmartDevice를 상속
+ * 고유 속성
+ * boolean turnedOn
+ * int temperature = 24
+ * getName > "스마트 에어컨" return
+ * turnOn > turnedOn : true;
+ * "해당 가전 이름"의 전원을 켭니다. 설정 온도는 : **도
+ * turnOff > 반대로
+ * isTurnedOn > 현재 전원 상태 메소드
+ * 고유 메소드로 온도 올리는거 하나 내리는거 하나
+ * 근데 전원이 꺼져있으면 현재 전원이 껴저있습니다 출력
+ * */
+
+
+public class SmartAirConditioner implements SmartDevice {
+
+    private boolean turnedOn;
+    private int temperature = 24;
+
+    public int getTemperature() {
+        return temperature;
+    }
+
+    @Override
+    public String getName() {
+        return "스마트 에어컨";
+    }
+
+    @Override
+    public void turnOn() {
+        turnedOn = true;
+        System.out.println(getName() + "의 전원을 켭니다. 현재 설정 온도는 : " + temperature);
+    }
+
+    @Override
+    public void turnOff() {
+        turnedOn = false;
+        System.out.println(getName() + "의 전원을 끕니다.");
+    }
+
+    @Override
+    public boolean isTurnedOn() {
+        return turnedOn;
+    }
+
+    public void upTemperature() {
+        if (turnedOn == true) {
+            temperature++;
+        } else {
+            System.out.println("전원이 꺼져있습니다.");
+        }
+    }
+
+    public void downTemperature() {
+        if (turnedOn == true) {
+            temperature--;
+        } else {
+            System.out.println("전원이 꺼져있습니다.");
+        }
+    }
+}

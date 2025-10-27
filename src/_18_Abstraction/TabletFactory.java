@@ -22,7 +22,7 @@ public class TabletFactory extends Factory{
 
     @Override
     public void manage() {
-        System.out.println("타블랫pc 공장을 관리합니다.");
+        System.out.println(getFactoryName() + "공장을 관리합니다.");
     }
 
     public void upgrade(String tabletName) {
