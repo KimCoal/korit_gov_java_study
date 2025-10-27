@@ -40,5 +40,4 @@ public class SmartHomeHub {
         System.out.println(smartSpeaker.getName() + " 전원 상태: " + (smartSpeaker.isTurnedOn() ? "ON" : "OFF"));
         System.out.println("=====================");
     }
-
 }
