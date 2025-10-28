@@ -1,10 +1,5 @@
 package _20_Casting.Shape;
 
-/*
-*
-*
-* */
-
 public class Main {
     public static void main(String[] args) {
 
@@ -23,5 +18,20 @@ public class Main {
         t.drawInternal();
         t.render();
 
+        Shape[] shapes = {
+                c,
+                r,
+                t
+        };
+
+        double a = 0;
+
+        for (Shape s1 : shapes) {
+            a += s1.area();
+        }
+
+        System.out.println(a);
+
     }
 }
+
