@@ -5,7 +5,6 @@ public class Person {
     // 객체마다 상수 COUNTRY1을 가짐
     // 객체 수준에서의 상수(객체 수준에서 변경할 수 없는 상수)
     final String COUNTRY1 = "korea";
-    final Integer NUM1 = 1000;
 
     // 전체 클래스가 하나의 COUNTRY2를 가짐
     static final String COUNTRY2 = "US";
