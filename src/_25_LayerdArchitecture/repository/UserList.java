@@ -41,9 +41,14 @@ public class UserList {
             newUsers[i] = users[i];
         }
 
-        newUsers[users.length] = user;
+//        newUsers[users.length] = user;
+        newUsers[newUsers.length - 1] = user;
 
         users = newUsers;
 
+    }
+
+    public User[] getAllUser() {
+        return users;
     }
 }

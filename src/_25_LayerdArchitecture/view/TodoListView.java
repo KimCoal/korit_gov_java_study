@@ -1,5 +1,6 @@
 package _25_LayerdArchitecture.view;
 
+import _25_LayerdArchitecture.dto.SignInReqDto;
 import _25_LayerdArchitecture.dto.SignUpReqDto;
 import _25_LayerdArchitecture.entity.User;
 import _25_LayerdArchitecture.service.UserService;
@@ -43,10 +44,14 @@ public class TodoListView {
                 }
             } else if ("2".equals(cmd) && principle == null) {
                 // 회원가입
+                signUpView();
             } else if ("2".equals(cmd) && principle != null) {
                 // 로그아웃
+                principle = null;
+                System.out.println("로그아웃 성공");
             } else if ("3".equals(cmd) && principle == null) {
                 // 로그인
+                signInView();
             } else {
                 System.out.println("잘못입력하였습니다");
             }
@@ -61,6 +66,7 @@ public class TodoListView {
         String username = null;
         while(true) {
             System.out.print("username : ");
+            // 나중에 공백이나 null이 들어가면 안되게 고쳐보기
             username = scanner.nextLine();
             if (!userService.isDuplicatedUsername(username)) { // 중복이 되지 않았을때
                 System.out.println("사용가능한 아이디(username) 입니다.");
@@ -72,16 +78,42 @@ public class TodoListView {
         System.out.print("password : ");
         String password = scanner.nextLine();
 
-        System.out.println("name : ");
+        System.out.print("name : ");
         String name = scanner.nextLine();
 
         SignUpReqDto signUpReqDto = new SignUpReqDto(username, password, name);
         //userService의 회원가입 로직에 signupReqDto 전달
         userService.signUp(signUpReqDto);
+        System.out.println("================");
+        System.out.println("회원가입 완료");
+        // 조회할 수 있는 로직 추가
+        userService.printAllUserList();
 
 
 
 
     }
+
+    void signInView() {
+        System.out.println("[ 로그인 ]");
+        System.out.print("username : ");
+        String username = scanner.nextLine();
+
+        System.out.print("password : ");
+        String password = scanner.nextLine();
+
+        SignInReqDto signInReqDto = new SignInReqDto(username, password);
+
+        User loginUser = userService.signIn(signInReqDto);
+
+        if (loginUser == null) {
+            System.out.println("username이나 password를 다시 확인해주세요");
+        } else {
+            principle = loginUser;
+            System.out.println("로그인 성공");
+        }
+
+    }
+
 }
 

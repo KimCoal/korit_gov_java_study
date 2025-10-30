@@ -1,6 +1,7 @@
 package _25_LayerdArchitecture.service;
 
 
+import _25_LayerdArchitecture.dto.SignInReqDto;
 import _25_LayerdArchitecture.dto.SignUpReqDto;
 import _25_LayerdArchitecture.entity.User;
 import _25_LayerdArchitecture.repository.UserList;
@@ -26,6 +27,23 @@ public class UserService {
         user.setUserId(userList.generateUserId());
         // 3. user 배열에 추가
         userList.add(user);
+    }
+
+    // 회원 정보 전체 출력
+    public void printAllUserList() {
+        System.out.println("[ 회원정보 전체 조회 ]");
+        for (User user : userList.getAllUser()) {
+            System.out.println(user);
+        }
+    }
+
+    public User signIn(SignInReqDto signInReqDto) {
+        User user = userList.findByUsername(signInReqDto.getUsername());
+
+        if (user == null || !user.getPassword().equals(signInReqDto.getPassword())) {
+            return null;
+        }
+        return user;
     }
 }
 
