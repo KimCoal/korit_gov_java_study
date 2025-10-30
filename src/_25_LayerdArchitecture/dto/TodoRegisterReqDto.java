@@ -11,7 +11,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class TodoRegisterDto {
+public class TodoRegisterReqDto {
     private String content;
     private User user;
 }

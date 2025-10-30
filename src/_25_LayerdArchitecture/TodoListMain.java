@@ -11,6 +11,5 @@ public class TodoListMain {
         TodoListView todoListView = new TodoListView(userService);
 
         todoListView.homeView();
-
     }
 }
