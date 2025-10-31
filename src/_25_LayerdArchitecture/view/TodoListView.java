@@ -96,8 +96,6 @@ public class TodoListView {
         userService.printAllUserList();
 
 
-
-
     }
 
     void signInView() {
@@ -118,7 +116,6 @@ public class TodoListView {
             principle = loginUser;
             System.out.println("로그인 성공");
         }
-
     }
 
     void todoListMenu() {
@@ -137,9 +134,9 @@ public class TodoListView {
             } else if ("2".equals(cmd)) {
                 todoListView();
             }
-
         }
     }
+
     // todo 등록
     void todoRegisterView() {
         if(principle == null) {
@@ -172,8 +169,6 @@ public class TodoListView {
         for (Todo todo : myTodo) {
             System.out.println(todo);
         }
-
     }
-
 }
 
