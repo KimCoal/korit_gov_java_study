@@ -55,6 +55,28 @@ public class StrMap {
         boolean searchValueFlag1 = strMap.containsValue("coal");
         System.out.println(searchValueFlag1);
 
+        Set<Map.Entry<String, String>> entrySet = new HashSet<>(strMap.entrySet());
+        System.out.println(entrySet);
+        List<Map.Entry<String, String>> entryList1 = new ArrayList<>(entrySet);
+        System.out.println(entryList1);
+
+        // Map 정렬 > 사실 불가능
+        // Map은 빠른 탐색 및 검색을 위해 만들어진(설계된) 것
+        // 그래서 정렬은 고려하지 않고 만듦 > 그래서 순서도 보장하지 않는다
+        // 그럼에도 정렬하려면
+
+        Collections.sort(entryList1, Map.Entry.comparingByValue()); // 값 기준 정렬
+        System.out.println(entryList1);
+
+        Collections.sort(entryList1, Map.Entry.comparingByKey()); // 키 기준 정렬
+        System.out.println(entryList1);
+
+        Collections.sort(entryList1, Map.Entry.comparingByKey(Comparator.reverseOrder())); // 키 기준 내림차순
+        Collections.sort(entryList1, Map.Entry.comparingByValue(Comparator.reverseOrder())); // 값 기준 내림차순
+
+
+
+
 
     }
 }

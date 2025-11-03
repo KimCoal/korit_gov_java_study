@@ -12,7 +12,7 @@ package _29_Collections.Set;
 
 import java.util.*;
 
-public class LanguageSte {
+public class LanguageSet {
     public static void main(String[] args) {
         Set<String> strSet = new HashSet<>();
         List<String> strList = new ArrayList<>(Arrays.asList("Java", "Python", "C", "Python", "Java", "Java", "C++", "C#", "C", "Java"));
