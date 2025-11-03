@@ -1,6 +1,7 @@
 package _06_String;
 
-public class String02 {
+public class
+String02 {
     public static void main(String[] args) {
         System.out.println("===============================");
 
