@@ -49,5 +49,8 @@ public class Json01 {
         String json2 = gson1.toJson(jsonObject);
         System.out.println(json2);
 
+        // Json > JsonObject
+        JsonObject jsonObject2 = gson1.fromJson(json2, JsonObject.class);
+        System.out.println(jsonObject2);
     }
 }
