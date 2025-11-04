@@ -26,6 +26,7 @@ public class UserRepositoryImpl2 implements UserRepository{
     public void insert(User user) {
         user.setUserId(autoIncrementId++);
         users.add(user);
+        System.out.println(users);
     }
 
     @Override

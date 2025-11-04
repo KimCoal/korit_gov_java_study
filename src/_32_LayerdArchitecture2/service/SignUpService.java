@@ -24,9 +24,9 @@ public class SignUpService {
     public boolean isValidDuplicatedUsername(String username) {
         User foundUser = userRepository.findByUserName(username);
         if (foundUser != null) {
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 
     public void signup(SignUpReqDto signUpReqDto) {
@@ -42,3 +42,4 @@ public class SignUpService {
         return password.equals(confirmPassword);
     }
 }
+

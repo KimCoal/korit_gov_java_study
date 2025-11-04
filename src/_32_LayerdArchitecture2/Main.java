@@ -53,6 +53,7 @@ public class Main {
                     System.out.println("비밀번호가 일치하지 않습니다");
                 }
                 signUpService.signup(signUpReqDto);
+                System.out.println("회원가입 완료");
             } else if ("2".equals(selectedMenu)) {
                 System.out.println("[ 로그인 ]");
             } else if ("3".equals(selectedMenu)) {
