@@ -1,0 +1,63 @@
+package _35_StreamApi;
+
+/*
+* product > name, price
+* 브랜드명을 입력받고, 최대 가격을 입력받는다
+* 해당 브랜드의 상품중 최대 가격보다 아래인 제품 목록 출력
+* 만약 없다면 해당 조건에 맞는 제품이 없습니다 출력
+* */
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
+public class ProductMain {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        List<Product> products = Arrays.asList(
+                new Product("삼성 갤럭시북3 프로", 1850000),
+                new Product("삼성 갤럭시북 이온", 1350000),
+                new Product("삼성 갤럭시탭 S9", 950000),
+                new Product("삼성 갤럭시 S24 울트라", 1590000),
+                new Product("애플 맥북에어 M2", 1690000),
+                new Product("애플 맥북프로 M3", 2490000),
+                new Product("애플 아이패드 에어 5세대", 929000),
+                new Product("애플 아이폰 15 프로", 1550000),
+                new Product("LG 그램 17", 2190000),
+                new Product("LG 울트라PC", 1140000)
+        );
+
+        System.out.println("브랜드명을 입력해 주세요");
+        System.out.println(">>> ");
+        String inputBrand = scanner.nextLine();
+
+        System.out.println("최대 가격을 입력해 주세요");
+        System.out.println(">>> ");
+        int maxPrice = Integer.parseInt(scanner.nextLine());
+
+        List<Product> responseProduct = products.stream()
+                .filter(n -> n.getProductName().contains(inputBrand))
+                .filter(p -> p.getPrice() < maxPrice)
+                .toList();
+
+        if(responseProduct.isEmpty()) {
+            System.out.println("해당 조건에 맞는 제품이 없습니다.");
+        }
+
+        Map<String, Integer> mapProduct = responseProduct.stream()
+                .collect(Collectors.toMap(Product::getProductName, Product::getPrice));
+
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+        String json = gson.toJson(mapProduct);
+        System.out.println(json);
+
+
+    }
+
+}
